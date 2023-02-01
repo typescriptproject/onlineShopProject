@@ -1,5 +1,11 @@
 'use strict';
+<<<<<<< HEAD
 const { Model } = require('sequelize');
+=======
+const {
+  Model
+} = require('sequelize');
+>>>>>>> a06df25fe00b32c75264b7321fb1cd58f21bc10d
 module.exports = (sequelize, DataTypes) => {
   class Items extends Model {
     /**
@@ -11,6 +17,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
+<<<<<<< HEAD
   Items.init(
     {
       itemId: { primaryKey: true, type: DataTypes.BIGINT },
@@ -27,3 +34,16 @@ module.exports = (sequelize, DataTypes) => {
   );
   return Items;
 };
+=======
+  Items.init({
+    itemId: {primaryKey:true, type:DataTypes.BIGINT},
+    item_name: DataTypes.STRING,
+    price: DataTypes.BIGINT,
+    detail: DataTypes.string
+  }, {
+    sequelize,
+    modelName: 'Items',
+  });
+  return Items;
+};
+>>>>>>> a06df25fe00b32c75264b7321fb1cd58f21bc10d
